@@ -2,7 +2,14 @@ var scrolled;
 var winScroll = 0;
 var locked = false
   ,timeout;
+window.addEventListener('wheel', MouseWheelEvent);
+
+
 $(document).ready(function(){
+
+$('.owl-carousel').owlCarousel({
+    items:1,
+});
 
     if(! $('html').hasClass('cssvwunit')){
         headerHeight();
@@ -16,7 +23,7 @@ $(document).ready(function(){
     //SCROLL FUNCTION
 $('.menu  li').click(function(e){
 	e.preventDefault();
-	console.log('click');
+	// console.log('click');
 	//console.log($(this).attr('data-section'));
 	// $('.overlay').addClass('hide');
 
@@ -33,7 +40,7 @@ $('.menu  li').click(function(e){
 		  $('.overlay').removeClass('show');
       $('.menu li').removeClass('active');
       $(this).addClass('active');
-      console.log($(this).children('a').attr('data-section'));
+    //   console.log($(this).children('a').attr('data-section'));
      	$('.overlay.'+$(this).children('a').attr('data-section')).addClass('show');
      	// history.pushState(data,null,data);
      	$('.menu').addClass('background');
@@ -52,10 +59,10 @@ $('.menu  li').click(function(e){
   $('html').keydown(function(e){
     //console.log(e);
 
-    if(e.key == 'ArrowDown' || e.keyCode == '39'){
-     // console.log('Arrow Down');
+    if(e.key == 'ArrowDown' /*|| e.keyCode == '39'*/){
+    //  console.log('Arrow Down');
       scrollMe('down');
-    }else if(e.key == 'ArrowUp' || e.keyCode == '37'){
+    }else if(e.key == 'ArrowUp' /*|| e.keyCode == '37'*/){
      // console.log('Arrow Up');
       scrollMe('up');
     }
@@ -81,7 +88,7 @@ $('.menu  li').click(function(e){
     */
 
     $('a.details').click(function(e){
-        console.log('click');
+        // console.log('click');
         e.preventDefault();
         $(this).siblings('.more-info').slideToggle();
     });
@@ -95,6 +102,7 @@ $('.menu  li').click(function(e){
 
 });
 
+/*
 
 $('html').bind('mousewheel DOMMouseScroll', function (e) {
     var delta = (e.originalEvent.wheelDelta || -e.originalEvent.detail);
@@ -104,14 +112,14 @@ $('html').bind('mousewheel DOMMouseScroll', function (e) {
     // console.log(delta);
 
     if(locked === true){
-      return false;
+    //   return false;
     }
 
-    locked = true;
+    // locked = true;
 
     if (delta < -30) {
          //console.log('You scrolled down');
-         scrollMe('down');
+        //  scrollMe('down');
         
       //   $('.overlay').removeClass('show');
      	// $('.about').addClass('show');
@@ -120,24 +128,24 @@ $('html').bind('mousewheel DOMMouseScroll', function (e) {
      	// $('a.about').addClass('active');
          
     } else if (delta > 10) {
-        scrollMe('up');
+        // scrollMe('up');
         // console.log('You scrolled up');
    //      $('a.about').removeClass('active');
 			// $('.overlay').removeClass('show');
    //   	history.pushState('',null,'/heck-design3');
    //   	$('.menu').removeClass('background');
-        timer = 500;
+        timer = 750;
     }
 
     clearTimeout(timeout)
     timeout = setTimeout(function(){
       //unlock
-      locked = false;
+    //   locked = false;
     },timer)
-    console.log(timer);
+    // console.log(timer);
 });
 
-
+*/
 
     //END SCROLL FUNCTION
 
@@ -163,6 +171,36 @@ $(window).scroll(function(){
 });
 
 */
+
+function MouseWheelEvent(e){
+    console.log('Delta: '+e.deltaY);
+    var yDir = e.deltaY;
+    var xDir = e.deltaX;
+    // console.log('Movement: '+e.movementY);
+    var timer = 1000;
+    if(locked === true){
+        return false;
+        console.log('locked');
+    }
+
+    locked = true;
+
+    if(yDir > 0){
+        scrollMe('down');
+        console.log('not locked');
+    }else if(yDir <= -1){
+        scrollMe('up');
+        // timer = 750;
+    }
+
+    clearTimeout(timeout);
+    timeout = setTimeout(function(){
+        locked=false;
+    },timer);
+    
+
+
+}
 
 $(window).resize(function(){
     if(! $('html').hasClass('cssvwunit')){
@@ -246,7 +284,7 @@ function scrollMe(direction){
 
   }
     if($('.overlay').hasClass('show')){
-    console.log('josh');
+    // console.log('josh');
     $('body').removeClass('front-page');
   }else{
     $('body').addClass('front-page');
