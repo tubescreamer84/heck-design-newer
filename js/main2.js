@@ -173,6 +173,7 @@ $(window).scroll(function(){
 */
 
 function MouseWheelEvent(e){
+    e.preventDefault();
     console.log('Delta: '+e.deltaY);
     var yDir = e.deltaY;
     var xDir = e.deltaX;

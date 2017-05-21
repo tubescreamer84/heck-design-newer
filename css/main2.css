@@ -282,7 +282,7 @@ Overlays
     /* background: rgba(0,0,0,.85); */
     z-index: 1;
     /*display: flex;*/
-    transform: translate3d(200%,0,0);
+    transform: translate3d(0,100%,0);
     /* transition: all 1s ease-in-out !important; */
     -moz-transition: all .75s ease-in-out;
     -webkit-transition: all .75s ease-in-out;
@@ -486,11 +486,15 @@ section.overlay.our-work {
     padding-bottom: 0;
 }
 
-.owl-stage{
+/*.owl-stage{
     display: flex;
     align-items: center;
     height: 100vh !important;
 
+}*/
+
+.owl-carousel .owl-item,.owl-carousel .owl-stage-outer,.owl-carousel .owl-stage,.owl-carousel .work{
+    height:100%;
 }
 
 .owl-carousel img.owl-overide{
@@ -498,10 +502,11 @@ section.overlay.our-work {
     margin: 0 auto;
 }
 
+
 .owl-carousel .owl-stage-outer {
     /*padding-top: 10%;*/
     /* padding-bottom: 10%; */
-    box-sizing: content-box;
+    /*box-sizing: content-box;*/
 }
 
 
@@ -509,6 +514,9 @@ section.overlay.our-work {
     background: #FEB253;
 }
 
+.pad5{
+    padding:0 2.5% !important;
+}
 .active #our-work{
     color:#9D5800;
 }
@@ -591,8 +599,10 @@ section.overlay.our-work {
 }
 
   .phone img{
-        transform: rotate(7deg);
-    }
+   transform: rotate(12deg);
+    width: 50% !important;
+    margin-top: 10rem !important;
+  }
 
 /*********************************************************************************
 CONTACT
