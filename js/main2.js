@@ -9,6 +9,8 @@ $(document).ready(function(){
 
 $('.owl-carousel').owlCarousel({
     items:1,
+    dots:true,
+    nav:true,
 });
 
     if(! $('html').hasClass('cssvwunit')){
@@ -86,11 +88,19 @@ $('.menu  li').click(function(e){
     });
 
     */
-
+   
     $('a.details').click(function(e){
         // console.log('click');
         e.preventDefault();
+        // if( !$(this).siblings('.more-info').is(':visible')){
+        //      $(this).siblings('.more-info').blur();
+        // }
         $(this).siblings('.more-info').slideToggle();
+        
+    });
+
+    $('a.details').mouseup(function(){
+        $(this).blur();
     });
 
     $('.mobile-button').click(function(){
