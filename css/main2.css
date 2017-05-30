@@ -131,6 +131,20 @@ section.overlay{
 .pad5{
     padding:0 5% 5% 5%;
 }
+
+.owl-next::before{
+    content: "\f0da";
+  font-family: "FontAwesome";
+  font-size: 10rem;
+
+}
+
+.owl-prev::before{
+     content: "\f0d9";
+  font-family: "FontAwesome";
+   font-size: 10rem;
+}
+
 /*********************************************************************************
 Header
 *********************************************************************************/
@@ -614,24 +628,37 @@ OWL
     text-align: center;
     -webkit-tap-highlight-color: transparent;
     position: absolute;
-    bottom: 5rem;
+    /*bottom: 5rem;*/
     left: 0;
     right: 0;
     width: 100%;
+        top: 35vh;
+   
 }
-  .owl-theme .owl-nav [class*='owl-'] {
+
+.owl-theme .work{
+    width:95%;
+    margin:0 auto;
+}
+.owl-theme .owl-nav [class*='owl-'] {
+    position: absolute;
     color: #FFF;
     font-size: 14px;
     margin: 5px;
+    height:0;
     padding: 4px 7px;
-    background: #D6D6D6;
+    background:transparent;
     display: inline-block;
     cursor: pointer;
-    border-radius: 3px; }
-    .owl-theme .owl-nav [class*='owl-']:hover {
-      background: #869791;
-      color: #FFF;
-      text-decoration: none; }
+    border-radius: 3px; 
+}
+
+.owl-theme .owl-nav [class*='owl-']:hover {
+    color: #869791; 
+    background: transparent;
+    text-decoration: none; 
+}
+
   .owl-theme .owl-nav .disabled {
     opacity: 0.5;
     cursor: default; }
@@ -660,13 +687,20 @@ OWL
       -webkit-backface-visibility: visible;
       transition: opacity 200ms ease;
       border-radius: 30px; }
-    .owl-theme .owl-dots .owl-dot.active span, .owl-theme .owl-dots .owl-dot:hover span {
-      background: #869791; }
+    /*.owl-theme .owl-dots .owl-dot.active span, .owl-theme .owl-dots .owl-dot:hover span {
+    
+    }*/
+    .owl-prev{
+        left:0;
+    }
 
+    .owl-next{
+        right:0;
+    }
 .owl-theme .owl-nav .owl-prev,.owl-theme .owl-nav .owl-next{
-    outline: 0;
+    /*outline: 0;*/
     background-color: transparent;
-    border: 0.25rem solid #606c76;
+    /*border: 0.25rem solid #606c76;
     border-radius: .4rem;
     color: #606c76;
     cursor: pointer;
@@ -679,7 +713,16 @@ OWL
     text-align: center;
     text-decoration: none;
     text-transform: uppercase;
-    white-space: nowrap;
+    white-space: nowrap;*/
+          transition: all .25s ease-in-out;
+    -moz-transition: all.25s ease-in-out;
+    -webkit-transition: all .25s ease-in-out;
+}
+
+.button{
+       transition: all .25s ease-in-out;
+    -moz-transition: all.25s ease-in-out;
+    -webkit-transition: all .25s ease-in-out; 
 }
 /*********************************************************************************
 CONTACT

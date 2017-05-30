@@ -11,6 +11,8 @@ $('.owl-carousel').owlCarousel({
     items:1,
     dots:true,
     nav:true,
+    loop: true,
+    navText: false,
 });
 
     if(! $('html').hasClass('cssvwunit')){
