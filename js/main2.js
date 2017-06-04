@@ -7,13 +7,13 @@ window.addEventListener('wheel', MouseWheelEvent);
 
 $(document).ready(function(){
 
-$('.owl-carousel').owlCarousel({
-    items:1,
-    dots:true,
-    nav:true,
-    loop: true,
-    navText: false,
-});
+    $('.owl-carousel').owlCarousel({
+        items:1,
+        dots:true,
+        nav:true,
+        loop: true,
+        navText: false,
+    });
 
     if(! $('html').hasClass('cssvwunit')){
         headerHeight();
@@ -25,48 +25,44 @@ $('.owl-carousel').owlCarousel({
     });
 
     //SCROLL FUNCTION
-$('.menu  li').click(function(e){
-	e.preventDefault();
-	// console.log('click');
-	//console.log($(this).attr('data-section'));
-	// $('.overlay').addClass('hide');
+    $('.menu  li').click(function(e){
+        e.preventDefault();
+        // console.log('click');
+        //console.log($(this).attr('data-section'));
+        // $('.overlay').addClass('hide');
 
-	// $('.overlay.show').addClass('previous');
-	// $('.previous').addClass('show2');
-	var data = e.target.getAttribute('data-section');
-     if($(this).attr('data-section') == 'home'){
-       $('.menu li').removeClass('active');
-       $(this).addClass('active');
-     	$('.overlay').removeClass('show');
-     	// history.pushState(data,null,'/heck-design3');
-     	$('.menu').removeClass('background');
-	 }else{
-		  $('.overlay').removeClass('show');
-      $('.menu li').removeClass('active');
-      $(this).addClass('active');
-    //   console.log($(this).children('a').attr('data-section'));
-     	$('.overlay.'+$(this).children('a').attr('data-section')).addClass('show');
-     	// history.pushState(data,null,data);
-     	$('.menu').addClass('background');
-     }
-	 
- 
-
-
-	// $('.overlay').removeClass('show2');
-	// $('.overlay').removeClass('previous');
-  
-});
+        // $('.overlay.show').addClass('previous');
+        // $('.previous').addClass('show2');
+        var data = e.target.getAttribute('data-section');
+        if($(this).attr('data-section') == 'home'){
+        $('.menu li').removeClass('active');
+        $(this).addClass('active');
+            $('.overlay').removeClass('show');
+            // history.pushState(data,null,'/heck-design3');
+            $('.menu').removeClass('background');
+        }else{
+            $('.overlay').removeClass('show');
+        $('.menu li').removeClass('active');
+        $(this).addClass('active');
+        //   console.log($(this).children('a').attr('data-section'));
+            $('.overlay.'+$(this).children('a').attr('data-section')).addClass('show');
+            // history.pushState(data,null,data);
+            $('.menu').addClass('background');
+        }
+    });
 
 
     //On Arrow press
   $('html').keydown(function(e){
+  
     //console.log(e);
 
     if(e.key == 'ArrowDown' /*|| e.keyCode == '39'*/){
+            e.preventDefault
     //  console.log('Arrow Down');
       scrollMe('down');
     }else if(e.key == 'ArrowUp' /*|| e.keyCode == '37'*/){
+        e.preventDefault
      // console.log('Arrow Up');
       scrollMe('up');
     }
@@ -187,8 +183,10 @@ $(window).scroll(function(){
 function MouseWheelEvent(e){
     e.preventDefault();
     console.log('Delta: '+e.deltaY);
+
     var yDir = e.deltaY;
     var xDir = e.deltaX;
+    console.log('Xdir ' +e.deltaX);
     // console.log('Movement: '+e.movementY);
     var timer = 1000;
     if(locked === true){
@@ -200,7 +198,7 @@ function MouseWheelEvent(e){
 
     if(yDir > 0){
         scrollMe('down');
-        console.log('not locked');
+        console.log('scroll');
     }else if(yDir <= -1){
         scrollMe('up');
         // timer = 750;

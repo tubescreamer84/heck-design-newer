@@ -15,7 +15,9 @@ container-full-width{
 }
 
 body{
-    overflow-x: hidden;
+    height:100vh;
+    position:relative;
+    overflow: hidden;
     font-family: 'Roboto Condensed', sans-serif;
 }
 
