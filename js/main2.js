@@ -13,6 +13,7 @@ $(document).ready(function(){
         nav:true,
         loop: true,
         navText: false,
+        navClass: ['owl-prev icon-arrow-left','owl-next icon-arrow-right']
     });
 
     if(! $('html').hasClass('cssvwunit')){
@@ -188,7 +189,7 @@ function MouseWheelEvent(e){
     var xDir = e.deltaX;
     console.log('Xdir ' +e.deltaX);
     // console.log('Movement: '+e.movementY);
-    var timer = 1000;
+    var timer = 1250;
     if(locked === true){
         return false;
         console.log('locked');

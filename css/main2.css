@@ -57,6 +57,47 @@ FONTS
     font-style: normal;
 }
 
+
+@font-face {
+  font-family: 'icomoon';
+  src:  url('fonts/icomoon.eot?h2zzlp');
+  src:  url('fonts/icomoon.eot?h2zzlp#iefix') format('embedded-opentype'),
+    url('fonts/icomoon.ttf?h2zzlp') format('truetype'),
+    url('fonts/icomoon.woff?h2zzlp') format('woff'),
+    url('fonts/icomoon.svg?h2zzlp#icomoon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'icomoon' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-arrow-left:before {
+  content: "\e901";
+}
+.icon-arrow-right:before {
+  content: "\e902";
+}
+.icon-arrow-down:before {
+  content: "\e903";
+}
+.icon-arrow-up:before {
+  content: "\e900";
+}
+
+
 p{
  line-height: 2.75rem;
     font-size: 1.75rem;
@@ -134,7 +175,7 @@ section.overlay{
     padding:0 5% 5% 5%;
 }
 
-.owl-next::before{
+/*.owl-next::before{
     content: "\f0da";
   font-family: "FontAwesome";
   font-size: 10rem;
@@ -145,7 +186,7 @@ section.overlay{
      content: "\f0d9";
   font-family: "FontAwesome";
    font-size: 10rem;
-}
+}*/
 
 /*********************************************************************************
 Header
@@ -465,7 +506,9 @@ section.about {
     /*background: #4c66ae;
     background: #41858b;*/
     background: #3C7AA2;
-    background-image: url(../img/sayagata-400px-transparent.png);
+    /*background-image: url(../img/sayagata-400px-transparent.png);*/
+    background-image: url(../img/seattle-jerome2.jpg);
+    background-size: cover;
 }
 
 section.about.overlay
@@ -475,12 +518,12 @@ section.about.overlay
 }
 
 .about-text{
-    width: 75%;
+    width: 60%;
     margin: 0 auto;
 }
 
 .about-text p{
-    font-size:1.75rem;
+    font-size:2rem;
 }
 
 .about h1{
@@ -489,6 +532,8 @@ section.about.overlay
 
 .active a#about{
     color: #063F64;
+    color: #de8f67;
+    color: #c55718;
 }
 
 .spaceneedle{
@@ -508,6 +553,13 @@ section.overlay.our-work {
     height: 100vh !important;
 
 }*/
+
+.our-work-heading{
+    position: absolute;
+    text-align: center;
+    right: 0;
+    left: 0;
+}
 
 .owl-carousel .owl-item,.owl-carousel .owl-stage-outer,.owl-carousel .owl-stage,.owl-carousel .work{
     height:100%;
@@ -634,7 +686,7 @@ OWL
     left: 0;
     right: 0;
     width: 100%;
-        top: 35vh;
+        top: 42vh;
    
 }
 
@@ -702,6 +754,7 @@ OWL
 .owl-theme .owl-nav .owl-prev,.owl-theme .owl-nav .owl-next{
     /*outline: 0;*/
     background-color: transparent;
+        font-size: 7rem;
     /*border: 0.25rem solid #606c76;
     border-radius: .4rem;
     color: #606c76;

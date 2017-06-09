@@ -55,7 +55,7 @@
 
    <!-- Our Work -->
     <div class="jumbotron">
-        <img src="img/mountain.png" class="mountain">
+        <img src="img/rainier_vector.png" class="mountain">
     
          <!--<i class="fa fa-arrow-circle-o-left scroll-up" aria-hidden="true"></i>
      <i class="fa fa-angle-down scroll-down" aria-hidden="true"></i>-->
@@ -93,14 +93,15 @@
                 We are dedicated to creating  <span class="white-text">digital solutions</span> to suit the needs of the business or individual.</p>
                 </div>
           </div>
-          <div class="column column-20"> <img src="img/spaceneedle.png" class="spaceneedle"></div>
-          </div>
+        
       </section>
 <!-- End About Section -->
 
-      <section class="overlay our-work container-fluid row owl-carousel owl-theme" id="our-work"> 
+      <section class="overlay our-work" id="our-work"> 
           <!--<div class="angle"></div>-->
-      <!--<h1>Our Work</h1>-->
+              <h1 class="our-work-heading">Our Work</h1>
+    <div class="owl-carousel owl-theme container-fluid row">
+  
 
     <div class="work row row-center">
         <div class="column">
@@ -191,7 +192,7 @@ END CODE
 
 
 
-
+    </div> <!--OWL CAROUSEL WRAP -->
       </section> <!--SECTION -->
 
       <section class="services overlay" id="services">
@@ -221,18 +222,18 @@ END CODE
       
       <section class="overlay contact" id="contact">
          
-          <h1>Contact Us</h1>
+         
     
-          <div class="row clearfix row-center">
+          <div class="row row-wrap clearfix row-center">
+               <div class="column column-100"><h1>Contact Us</h1></div>
             <div class="column column-10"></div>
-              <div class="column white-text contact-left">
+              <div class="column column-40 white-text contact-left">
                 <h3>Heck Design Studio</h3>
                 <p>Chehalis, WA<br>
                 Phone: 360.388.6428<br>
                 hello@heck.design</p>
-            </div>
-            <div class="column">
-              <form method="POST" action="https://formspree.io/hello@heck.design" id="contact-form">
+
+                  <form method="POST" action="https://formspree.io/hello@heck.design" id="contact-form">
               <div class="mdl-textfield mdl-js-textfield">
                   <label class="mdl-textfield__label" for="name">Name</label>
                 <input class="mdl-textfield__input" type="text" id="name" name="name" required>
@@ -258,10 +259,12 @@ END CODE
               </button>
 
               </form>
+            </div>
+            <div class="column column-50" style="text-align:center;">
+             <img src="img/spaceneedle-josh.png" class="spaceneedle">
+          </div>
 
             </div>
-          
-             <div class="column column-10"></div>
         </div>
          
        </section>
