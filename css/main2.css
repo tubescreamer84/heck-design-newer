@@ -503,12 +503,13 @@ ABOUT
 
 section.about {  
     color: #fff;
-    /*background: #4c66ae;
-    background: #41858b;*/
     background: #3C7AA2;
-    /*background-image: url(../img/sayagata-400px-transparent.png);*/
+    /* background-image: url(../img/sayagata-400px-transparent.png); */
     background-image: url(../img/seattle-jerome2.jpg);
+    background-image: url(../img/jerome-seattle2.jpg);
+    background-image: url(../img/spaceneedle3.jpg);
     background-size: cover;
+    background-repeat: no-repeat;
 }
 
 section.about.overlay
@@ -852,8 +853,13 @@ input[type='email']:focus, input[type='number']:focus, input[type='password']:fo
 }
 
 @media screen and (max-width:768px){
+    .menu{
+            left: initial;
+    right: initial;
+    position: relative;
+    }
     .mobile-button{
-        display: block;
+        /*display: block;*/
         width: 5rem;
         position: absolute;
         right: 2rem;
@@ -895,7 +901,7 @@ input[type='email']:focus, input[type='number']:focus, input[type='password']:fo
     }
 
     .menu{
-       transform: translate3d(0,-100%,0);
+       /*transform: translate3d(0,-100%,0);
     position: fixed;
     background: #fff;
     width: 100%;
@@ -904,7 +910,7 @@ input[type='email']:focus, input[type='number']:focus, input[type='password']:fo
     bottom: 0;
     right: 0;
     height: 100%;
-    text-align: center;
+    text-align: center;*/
     }
 
     .show .menu{
@@ -917,14 +923,14 @@ input[type='email']:focus, input[type='number']:focus, input[type='password']:fo
    .menu ul{
        display: inline-block;
     text-align: center;
-    margin-top: 14rem;
+    margin-top: 0;
     }
     .menu ul li{
-        display: block;
+          margin-right: 1.25rem;
         
     }
     .menu ul li a{
-color: #606c76;
+        /*color: #606c76;*/
     }
 
     h1{
@@ -937,17 +943,49 @@ color: #606c76;
 }
 
 @media screen and (max-width: 640px){
+    .hideme{
+        display: none !important;
+    }
+    section.overlay.our-work{
+        padding-top:10rem;
+    }
     header{
-        background: #fff !important;
-        border-bottom: 1px solid #ccc !important;
+        /*background: #fff !important;
+        border-bottom: 1px solid #ccc !important;*/
+        padding: 0 1rem;
     }
 
+    .owl-theme .owl-nav {
+        top:30vh;
+    }
+
+    .owl-theme .owl-nav .owl-prev, .owl-theme .owl-nav .owl-next{
+        font-size:4rem;
+        padding:0;
+    }
+
+    .phone img {
+        margin-top:0;
+    }
+
+    .contact h1{
+            margin-top: 8rem;
+    margin-bottom: 2rem;
+
+    }
     header .logo img.dark {
-        display: block !important;
+        /*display: block !important;*/
+    }
+
+    header .logo{
+          width: 25%;
+    margin: 0 auto;
+    position: relative;
+    margin-top: 1rem;
     }
 
       header .logo img.light {
-        display: none !important;
+        /*display: none !important;*/
     }
 
     .line{
@@ -987,6 +1025,11 @@ color: #606c76;
     .row.no-column .column.column-25{
         flex: 0 0 50%;
         max-width: 50%;
+    }
+    .about-text{
+            width: 95%;
+    margin: 0 auto;
+    flex-direction: row;
     }
 }
 

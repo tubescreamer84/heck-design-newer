@@ -189,7 +189,7 @@ function MouseWheelEvent(e){
     var xDir = e.deltaX;
     console.log('Xdir ' +e.deltaX);
     // console.log('Movement: '+e.movementY);
-    var timer = 1250;
+    var timer = 1200;
     if(locked === true){
         return false;
         console.log('locked');
