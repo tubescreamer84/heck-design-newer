@@ -7,6 +7,26 @@ window.addEventListener('wheel', MouseWheelEvent);
 
 $(document).ready(function(){
 
+    $('body').height($(window).height());
+    $(window).on('swipedown',function(){
+        console.log('swipe down');
+        scrollMe('up');
+    });
+
+    $(window).on('swipeup',function(){
+        console.log('swipe up');
+        scrollMe('down');
+    });
+
+    $(window).on('swipeleft',function(){
+        console.log('swipe left');
+    });
+
+    $(window).on('swiperight',function(){
+        console.log('swipe right');
+    });
+
+
     $('.owl-carousel').owlCarousel({
         items:1,
         dots:true,
@@ -183,11 +203,11 @@ $(window).scroll(function(){
 
 function MouseWheelEvent(e){
     e.preventDefault();
-    console.log('Delta: '+e.deltaY);
+    // console.log('Delta: '+e.deltaY);
 
     var yDir = e.deltaY;
     var xDir = e.deltaX;
-    console.log('Xdir ' +e.deltaX);
+    //console.log('Xdir ' +e.deltaX);
     // console.log('Movement: '+e.movementY);
     var timer = 1200;
     if(locked === true){
@@ -199,7 +219,7 @@ function MouseWheelEvent(e){
 
     if(yDir > 0){
         scrollMe('down');
-        console.log('scroll');
+       // console.log('scroll');
     }else if(yDir <= -1){
         scrollMe('up');
         // timer = 750;

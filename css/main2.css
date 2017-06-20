@@ -19,6 +19,11 @@ body{
     position:relative;
     overflow: hidden;
     font-family: 'Roboto Condensed', sans-serif;
+        /*touch-action: none;*/
+}
+
+html{
+    overflow: hidden;
 }
 
 .back-color-dark{
@@ -202,6 +207,7 @@ Header
 .transparent {
     background: transparent;
     height: 8rem;
+    /*display: none;*/
 }
 
 .scrolling header{
@@ -359,7 +365,7 @@ JUMBOTRON
 *********************************************************************************/
 
 .cssvwunit .overlay,.cssvwunit .jumbotron{
- min-height: 100vh;
+ /*min-height: 100vh;*/
 }
 .jumbotron {
     /*background: url(../img/jerome.jpg) center / cover;
@@ -368,9 +374,9 @@ JUMBOTRON
     /* background: transparent; */
     background:#1DA664;
     color:#fff;
-    min-height:300px;
+    height:100%;
     position: relative;
-    display: flex;
+    /*display: flex;*/
 }
 
 .mountain{
@@ -418,6 +424,7 @@ JUMBOTRON
     width: 100%;
     position: relative;
     z-index: 1;
+    height:100%;
 }
 
 .jumbotron .inner-wrap.vert-center {
@@ -556,10 +563,12 @@ section.overlay.our-work {
 }*/
 
 .our-work-heading{
-    position: absolute;
+      position: absolute;
     text-align: center;
     right: 0;
     left: 0;
+    top: 5rem;
+    margin: 0;
 }
 
 .owl-carousel .owl-item,.owl-carousel .owl-stage-outer,.owl-carousel .owl-stage,.owl-carousel .work{
@@ -660,6 +669,10 @@ section.overlay.our-work {
     align-items: center;
 }
 
+.flex-row{
+    flex-direction: row;
+}
+
 .text-center{
     text-align:center;
 }
@@ -670,8 +683,8 @@ section.overlay.our-work {
 
   .phone img{
    transform: rotate(12deg);
-    width: 50% !important;
-    margin-top: 10rem !important;
+    width: 50%;
+    margin-top: 10rem;
   }
 
 
@@ -943,11 +956,28 @@ input[type='email']:focus, input[type='number']:focus, input[type='password']:fo
 }
 
 @media screen and (max-width: 640px){
+
+    .our-work h2{
+        margin-top: 1rem;
+    }
+
+    .owl-theme .owl-dots{
+        bottom:2rem;
+    }
+
     .hideme{
         display: none !important;
     }
     section.overlay.our-work{
-        padding-top:10rem;
+        padding-top:6rem;
+    }
+
+    h2 {
+        font-size: 2.40rem;
+    }
+
+    .our-work .column{
+        flex: initial;
     }
     header{
         /*background: #fff !important;
@@ -965,11 +995,46 @@ input[type='email']:focus, input[type='number']:focus, input[type='password']:fo
     }
 
     .phone img {
-        margin-top:0;
+        /* transform: rotate(90deg); */
+        margin-top: 1rem;
+        width: 26% !important;
     }
 
+    .about .row{
+            flex-direction: row;
+    }
+
+    .more-info{
+    /*display: block;*/
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: -15rem;
+    }
+
+    .work p{
+        line-height: 2.5rem;
+    }
+
+    .our-work .column{
+        position:initial;
+    }
+    .contact .row{
+        flex-direction: row;
+    }
+
+    .contact .row .column.column-20 {
+        flex: 0 0 40%;
+        max-width: 40%;
+    }
+    .csquare.row{
+        /*width: 95%;
+        margin: 0 auto;
+        */
+        flex-direction: column-reverse;
+    }
     .contact h1{
-            margin-top: 8rem;
+            margin-top: 3rem;
     margin-bottom: 2rem;
 
     }
@@ -982,12 +1047,21 @@ input[type='email']:focus, input[type='number']:focus, input[type='password']:fo
     margin: 0 auto;
     position: relative;
     margin-top: 1rem;
+    float:left;
     }
 
-      header .logo img.light {
+    header .logo img.light {
         /*display: none !important;*/
     }
-
+    
+    .menu {
+        top: 1rem;
+    }
+    .menu ul li a {
+    /* color: #606c76; */
+    font-size: 1.35rem;
+    }
+    
     .line{
         background: #606c76 !important;
     }
@@ -1001,7 +1075,7 @@ input[type='email']:focus, input[type='number']:focus, input[type='password']:fo
     }
 
     .phone{
-        margin-bottom:5%;
+        /*margin-bottom:5%;*/
     }
 
     .row .column.responsive{
