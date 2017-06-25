@@ -7,7 +7,7 @@ window.addEventListener('wheel', MouseWheelEvent);
 
 $(document).ready(function(){
 
-    $('body').height($(window).height());
+    sizeBody();
     $(window).on('swipedown',function(){
         console.log('swipe down');
         scrollMe('up');
@@ -235,15 +235,17 @@ function MouseWheelEvent(e){
 }
 
 $(window).resize(function(){
-    if(! $('html').hasClass('cssvwunit')){
+    // if(! $('html').hasClass('cssvwunit')){
         headerHeight();
-    }
+         sizeBody();
+    // }
 });
 
 $(window).load(function(){
-      if(! $('html').hasClass('cssvwunit')){
+    //   if(! $('html').hasClass('cssvwunit')){
         headerHeight();
-    }
+         sizeBody();
+    // }
 });
 
 /*
@@ -277,6 +279,10 @@ function parallax(element){
 */
 function headerHeight(){
     $('.jumbotron').height($(window).height());
+}
+
+function sizeBody(){
+    $('body').height($(window).height());
 }
 
 
