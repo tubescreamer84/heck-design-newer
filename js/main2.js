@@ -114,8 +114,13 @@ $(document).ready(function(){
         // if( !$(this).siblings('.more-info').is(':visible')){
         //      $(this).siblings('.more-info').blur();
         // }
-        // $(this).siblings('.more-info').slideToggle();
-         $(this).parents().siblings('.more-info').fadeToggle();
+       
+         if($(window).height() > 425){
+              $(this).siblings('.more-info').slideToggle();
+         }else{
+             $(this).parents().siblings('.more-info.mobile').fadeToggle();
+         }
+        
         
     });
 

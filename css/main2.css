@@ -758,6 +758,7 @@ OWL
     bottom: 10rem;
     left: 0;
     width: 100%;
+    z-index: -1;
   }
   .owl-theme .owl-dots .owl-dot {
     display: inline-block;

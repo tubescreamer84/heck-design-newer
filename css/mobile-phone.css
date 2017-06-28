@@ -110,11 +110,11 @@
     }
     
     .jumbotron .row.row-center,.about .row.row-center{
-        align-items: flex-start;
+        /*align-items: flex-start;*/
     }
 
      .jumbotron .row.row-center .column {
-       margin-top:7rem;
+      margin-top: -4rem;
     }
 
    .hideme{
@@ -150,4 +150,21 @@
         top: 0rem;
         font-size: 4rem;
     }
+}
+
+
+
+/* Ipad and smaller Portrait */
+@media only screen and (min-height:425px) and (max-width: 768px){
+    .hideme{
+        display:none !important;
+    }
+}
+
+/* 5x to Ipad Landscape*/
+@media only screen and (min-height:425px) and (min-width: 733px) and (max-width: 1024px){
+    .hideme{
+        display: none !important;
+    }
+
 }
