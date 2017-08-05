@@ -33,6 +33,7 @@ $(document).ready(function(){
         nav:true,
         loop: true,
         navText: false,
+        smartSpeed:750,
         navClass: ['owl-prev icon-arrow-left','owl-next icon-arrow-right']
     });
 
