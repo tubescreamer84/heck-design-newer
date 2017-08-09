@@ -15,15 +15,15 @@ container-full-width{
 }
 
 body{
-    height:100vh;
+    /*height:100vh;
     position:relative;
-    overflow: hidden;
+    overflow: hidden;*/
     font-family: 'Roboto Condensed', sans-serif;
         /*touch-action: none;*/
 }
 
 html{
-    overflow: hidden;
+    /*overflow: hidden;*/
 }
 
 .back-color-dark{
@@ -146,7 +146,7 @@ h2 {
     text-transform: uppercase;
     font-weight: bold;
     color: #fff;
-    font-size: 8rem;
+    font-size: 5rem;
     letter-spacing: .025rem;
     margin-bottom: .5rem;
     /* margin-top: 3em; */
@@ -158,18 +158,21 @@ h3{
 }
 
 h1{
-     font-family: 'GlacialIndifferenceBold', Arial, sans-serif;
+   font-family: 'GlacialIndifferenceBold', Arial, sans-serif;
     font-size: 5.5rem;
     text-transform: uppercase;
     /* color: #fff; */
     text-align: center;
-    margin-bottom: 5rem;
-    margin-top:10rem;
+    /* margin-bottom: 5rem; */
+    padding: 5rem 0;
+     padding: 10rem 0 4rem 0;
+    /* margin-top: 10rem; */
 }
  
 section.overlay{
         /*padding-top: 5%;*/
         padding-bottom: 5%;
+        position:relative;
 }
 
 .padding5{
@@ -254,8 +257,9 @@ header .logo img.dark{
 
 header {
     position: fixed;
+    /*position: absolute;*/
     z-index: 100;
-    background: transparent;
+    background: #1DA664;;
     height: 6rem;
     padding: 0 4rem;
     width:100%;
@@ -355,16 +359,16 @@ Overlays
 *********************************************************************************/
 
 .overlay{
-     position: absolute;
+     /*position: absolute;
     top: 0;
     left: 0;
     bottom: 0;
     right: 0;
-    /* background: rgba(0,0,0,.85); */
+ */
     z-index: 1;
-    /*display: flex;*/
-    transform: translate3d(0,100%,0);
-    /* transition: all 1s ease-in-out !important; */
+
+    /*transform: translate3d(0,100%,0);*/
+   
     -moz-transition: all .75s ease-in-out;
     -webkit-transition: all .75s ease-in-out;
     -webkit-transition-timing-function: cubic-bezier(0.5,0,0.3,1);
@@ -383,7 +387,8 @@ JUMBOTRON
 *********************************************************************************/
 
 .cssvwunit .overlay,.cssvwunit .jumbotron{
- /*min-height: 100vh;*/
+    min-height: 100vh;
+    max-height: 100vh;
 }
 .jumbotron {
     /*background: url(../img/jerome.jpg) center / cover;
@@ -440,11 +445,16 @@ JUMBOTRON
 }
 
 .jumbotron .inner-wrap {
-     /*text-align: center;*/
+     /* text-align: center; */
     width: 100%;
     position: relative;
     z-index: 1;
-    height:100%;
+    height: 100%;
+    /* position: absolute; */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 
 .jumbotron .inner-wrap.vert-center {
@@ -510,11 +520,24 @@ animation-delay: 1s;
 
 .scroll-down{
     font-size: 3rem;
-    /*-webkit-animation-duration: 1s;
-    animation-duration: 1s;
-    -webkit-animation-fill-mode: both;
-    animation-fill-mode: both;*/
+    transform: translate3d(0,-500%,0);
+    -webkit-transition: all 2s ease-in-out;
+    -moz-transition: background-color 2s ease-out;
+    -o-transition: background-color 2s ease-out;
+    transition: all 2s ease-in-out;
+    /*transition-delay: .25s;*/
 
+}
+
+.scroll-down h3{
+    visibility: hidden;
+}
+
+.scroll-down.show h3{
+    /*visibility: visible;*/
+}
+.scroll-down.show{
+    transform: translate3d(0,150%,0); 
 }
 
 
@@ -616,6 +639,7 @@ OUR WORK
 section.overlay.our-work {
     padding-top: 0;
     padding-bottom: 0;
+    overflow: hidden;
 }
 
 /*.owl-stage{
@@ -624,13 +648,23 @@ section.overlay.our-work {
     height: 100vh !important;
 
 }*/
-
-.our-work-heading{
+.our-work .angle2{
+    background: #ffa93e;
     position: absolute;
+    z-index: 0;
+    width: 52%;
+    right: -10%;
+    top: -30%;
+    height: 150%;
+    /* float: right; */
+    transform: rotate(-10deg);
+}
+.our-work-heading{
+       position: absolute; 
     text-align: center;
-    right: 0;
-    left: 0;
-    top: 8rem;
+     right: 0; 
+     left: 0; 
+    /* top: 8rem; */
     margin: 0;
 }
 
@@ -749,7 +783,7 @@ section.overlay.our-work {
 
   .owl-carousel .phone img{
     transform: rotate(12deg);
-    width: 50%;
+    width: 25%;
     margin-top: 10rem;
   }
 
@@ -757,16 +791,24 @@ section.overlay.our-work {
 /*********************************************************************************
 OWL
 *********************************************************************************/
+.no-js .owl-carousel, .owl-carousel.owl-loaded{
+    position:absolute;
+}
+
 .owl-theme .owl-nav {
-     margin-top: 10px;
+        margin-top: 10px;
     text-align: center;
     -webkit-tap-highlight-color: transparent;
-    position: absolute;
-    /*bottom: 5rem;*/
-    left: 0;
-    right: 0;
+    /* position: absolute; */
+    /* bottom: 5rem; */
+    /* left: 0; */
+    /* right: 0; */
     width: 100%;
-        top: 42vh;
+    /* top: 42vh; */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
    
 }
 
@@ -859,6 +901,10 @@ OWL
        transition: all .25s ease-in-out;
     -moz-transition: all.25s ease-in-out;
     -webkit-transition: all .25s ease-in-out; 
+}
+
+.services{
+    display: none;
 }
 /*********************************************************************************
 CONTACT
