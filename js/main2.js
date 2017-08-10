@@ -248,6 +248,24 @@ function MouseWheelEvent(e){
 }
 */
 
+$(window).scroll(function(e){
+    var wintop = $(window).scrollTop();
+    var header = $('header').outerHeight();
+    console.log(header);
+
+    console.log('about' + $('.about').offset().top);
+    console.log($(window).scrollTop());
+    if (wintop >= $('.about').offset().top - header && wintop < $('.our-work').offset().top){
+        console.log('about');
+        $('header').css('background-color','#a23f61');
+    }
+    else if(wintop >= $('.our-work').offset().top - header){
+         $('header').css('background-color','#e4912a');
+    }else{
+        $('header').css('background-color','#1DA664');
+    }
+});
+
 $(window).resize(function(){
     // if(! $('html').hasClass('cssvwunit')){
         headerHeight();
