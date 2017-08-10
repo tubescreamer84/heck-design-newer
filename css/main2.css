@@ -131,6 +131,28 @@ p{
     background: rgba(0,0,0,0.35);
     z-index: -1;
 }
+
+.yellow{
+        background: #ffa93e;
+            background: #04d2b0;
+            background:#b7219a;
+    position: absolute;
+    z-index: 0;
+    width: 100%;
+    left: 0%;
+    top: -30%;
+    height: 150%;
+    /* float: right; */
+    transform: rotate(0deg);
+    opacity: .5;
+}
+
+.vertical-center{
+      position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
 /*********************************************************************************
 Headings
 *********************************************************************************/
@@ -159,7 +181,7 @@ h3{
 
 h1{
    font-family: 'GlacialIndifferenceBold', Arial, sans-serif;
-    font-size: 5.5rem;
+    font-size: 4rem;
     text-transform: uppercase;
     /* color: #fff; */
     text-align: center;
@@ -603,16 +625,33 @@ section.about {
     background-size: cover;
     background-repeat: no-repeat;
     background-position: 50%;
+    overflow: hidden;
+}
+
+.about .angle2{
+    background: #ffa93e;
+    position: absolute;
+    z-index: 0;
+    width: 100%;
+    left: 0%;
+    top: -30%;
+    height: 150%;
+    /* float: right; */
+    transform: rotate(0deg);
+    opacity: .5;
 }
 
 section.about.overlay
 {
-    padding-top:10%;
-    padding-bottom:10%;
+    /*padding-top:10%;
+    padding-bottom:10%;*/
 }
 
+.about .row{
+    /*position: relative;*/
+}
 .about-text{
-    width: 60%;
+     width: 75%;
     margin: 0 auto;
 }
 
@@ -622,6 +661,7 @@ section.about.overlay
 
 .about h1{
     margin-bottom:2rem;
+    padding:0;
 }
 
 .active a#about{
@@ -664,6 +704,7 @@ section.overlay.our-work {
     text-align: center;
      right: 0; 
      left: 0; 
+     font-size: 6rem;
     /* top: 8rem; */
     margin: 0;
 }
