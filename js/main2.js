@@ -252,17 +252,28 @@ $(window).scroll(function(e){
     var wintop = $(window).scrollTop();
     var header = $('header').outerHeight();
     console.log(header);
-
-    console.log('about' + $('.about').offset().top);
-    console.log($(window).scrollTop());
-    if (wintop >= $('.about').offset().top - header && wintop < $('.our-work').offset().top){
+    console.log('our work: ' + $('.our-work').offset().top);
+    console.log('win-top' +  wintop);
+    console.log('minus header: ' + ($('.our-work').offset().top - header));
+    if (wintop >= $('.about').offset().top - header && wintop < $('.our-work').offset().top - header){
         console.log('about');
         $('header').css('background-color','#a23f61');
+           $('.active > a').css('color','#670124');
     }
-    else if(wintop >= $('.our-work').offset().top - header){
+    else if(wintop >= $('.our-work').offset().top - header && wintop < $('.contact').offset().top - header){
          $('header').css('background-color','#e4912a');
+         $('.active > a').css('color','#9a5602');
+       
+       
+    } else if(wintop >= $('.contact').offset().top - header){
+         $('header').css('background-color','#C63C0D');
+         $('.active > a').css('color','#8a2300');
+       
+       
     }else{
         $('header').css('background-color','#1DA664');
+          $('.active > a').css('color','#006D39');
+       
     }
 });
 

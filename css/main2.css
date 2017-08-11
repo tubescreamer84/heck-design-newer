@@ -426,6 +426,14 @@ JUMBOTRON
     /*display: flex;*/
 }
 
+.jumbo-inner{
+    height: auto;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+    background: #1DA664;
+}
 .mountain{
     width: 65%;
     height: auto;
@@ -494,10 +502,10 @@ header ul li a {
       transition: color .25s ease-in-out;
    -moz-transition: color .25s ease-in-out;
    -webkit-transition: color .25s ease-in-out;
-          -webkit-transition-delay: 250ms;
+          /*-webkit-transition-delay: 250ms;
     -moz-transition-delay: 250ms;
     -o-transition-delay: 250ms;
-    transition-delay: 250ms;
+    transition-delay: 250ms;*/
     /*-webkit-transition-delay: 2s; 
     transition-delay: 2s;*/
 }
