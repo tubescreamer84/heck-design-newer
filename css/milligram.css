@@ -432,12 +432,16 @@ input[type='radio'] {
   align-self: flex-end;
 }
 
-.row .column .column-center {
+.row .column.column-center {
   -ms-grid-row-align: center;
       align-self: center;
 }
 
 @media (min-width: 40rem) {
+.row .column .column-top {
+  align-self: flex-start;
+}
+
   .row {
     flex-direction: row;
     margin-left: -1.0rem;

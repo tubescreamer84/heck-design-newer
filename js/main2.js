@@ -249,12 +249,17 @@ function MouseWheelEvent(e){
 */
 
 $(window).scroll(function(e){
+    parallax();
     var wintop = $(window).scrollTop();
+    var winbottom = wintop + $(window).outerHeight();
     var header = $('header').outerHeight();
-    console.log(header);
-    console.log('our work: ' + $('.our-work').offset().top);
+    // console.log(header);
+    // console.log('our work: ' + $('.our-work').offset().top);
     console.log('win-top' +  wintop);
-    console.log('minus header: ' + ($('.our-work').offset().top - header));
+    console.log('win-bottom' +  winbottom);
+    console.log($('.our-work').offset().top);
+    
+    // console.log('minus header: ' + ($('.our-work').offset().top - header));
     if (wintop >= $('.about').offset().top - header && wintop < $('.our-work').offset().top - header){
         console.log('about');
         $('header').css('background-color','#a23f61');
@@ -273,7 +278,11 @@ $(window).scroll(function(e){
     }else{
         $('header').css('background-color','#1DA664');
           $('.active > a').css('color','#006D39');
-       
+    }
+
+    if (winbottom > $('.our-work').offset().top){
+        // parallaxdown();
+        // $('.our-work').addClass('parallaxmedown');
     }
 });
 
@@ -321,7 +330,8 @@ function parallax(element){
 }
 */
 function headerHeight(){
-    $('.jumbotron').height($(window).height());
+    // $('.jumbo-inner').height($(window).height());
+    //   $('.overlay').height($(window).height());
 }
 
 // function sizeBody(){
@@ -372,4 +382,29 @@ function scrollMe(direction){
   }
 
 
+}
+
+
+function parallax() {
+    if (jQuery(window).width() > 768) {
+        window.requestAnimationFrame(function() {
+            var scrolled = jQuery(window).scrollTop();
+            var parH = scrolled / 3;
+            parH = parH.toFixed();
+            jQuery('.parallaxme').css('transform', 'translate3d(0, ' + parH + 'px, 0)');
+        });
+    }
+}
+
+function parallaxdown() {
+    var wintop = $(window).scrollTop();
+    var winbottom = wintop + $(window).outerHeight();
+    if (jQuery(window).width() > 768) {
+        window.requestAnimationFrame(function() {
+            var scrolled = jQuery(window).scrollTop();
+            var parH = scrolled / 3;
+            parH = parH.toFixed();
+            jQuery('.parallaxmedown').css('transform', 'translate3d(0, ' + -parH + 'px, 0)');
+        });
+    }
 }
