@@ -52,34 +52,42 @@ $(document).ready(function(){
     //SCROLL FUNCTION
     $('.menu  li').click(function(e){
         e.preventDefault();
-    
+        var data = e.target.getAttribute('data-section');
+
         // console.log('click');
         //console.log($(this).attr('data-section'));
         // $('.overlay').addClass('hide');
 
         // $('.overlay.show').addClass('previous');
         // $('.previous').addClass('show2');
-        var data = e.target.getAttribute('data-section');
+  
 
            
-        $('html, body').animate({
-            scrollTop: $('.'+data).offset().top
-        }, 750);
-        // if($(this).attr('data-section') == 'home'){
-        // $('.menu li').removeClass('active');
-        // $(this).addClass('active');
+      
+
+        if($(this).attr('data-section') == 'home'){
+            $('html, body').animate({
+                scrollTop: 0
+            }, 750);
+            $('.active > a').css('color','');
+            $('.menu li').removeClass('active');
+            $(this).addClass('active');
         //     $('.overlay').removeClass('show');
         //  history.pushState(data,null,'/heck-design3');
         //     $('.menu').removeClass('background');
-        // }else{
+        }else{
+        $('html, body').animate({
+            scrollTop: $('.'+data).offset().top
+        }, 750);
         //     $('.overlay').removeClass('show');
-        // $('.menu li').removeClass('active');
-        // $(this).addClass('active');
+        $('.active > a').css('color','');
+        $('.menu li').removeClass('active');
+        $(this).addClass('active');
         // //   console.log($(this).children('a').attr('data-section'));
         //     $('.overlay.'+$(this).children('a').attr('data-section')).addClass('show');
         //     history.pushState(data,null,data);
         //     $('.menu').addClass('background');
-        // }
+        }
     });
 
 
@@ -269,21 +277,36 @@ $(window).scroll(function(e){
     if (wintop >= $('.about').offset().top - header && wintop < $('.our-work').offset().top - header){
         console.log('about');
         $('header').css('background-color','#a23f61');
-           $('.active > a').css('color','#670124');
+        $('.active > a').css('color','');
+        $('.menu li').removeClass('active');
+        $('.menu-about').addClass('active');
+        $('.active > a').css('color','#670124');
+        
+           
     }
     else if(wintop >= $('.our-work').offset().top - header && wintop < $('.contact').offset().top - header){
          $('header').css('background-color','#e4912a');
+         $('.active > a').css('color','');
+         $('.menu li').removeClass('active');
+         $('.menu-work').addClass('active');
+         $('.active > a').css('color','initial');
          $('.active > a').css('color','#9a5602');
        
        
     } else if(wintop >= $('.contact').offset().top - header){
          $('header').css('background-color','#C63C0D');
+         $('.active > a').css('color','');
+         $('.menu li').removeClass('active');
+         $('.menu-contact').addClass('active');
          $('.active > a').css('color','#8a2300');
        
        
     }else{
         $('header').css('background-color','#1DA664');
-          $('.active > a').css('color','#006D39');
+        $('.active > a').css('color','');
+        $('.menu li').removeClass('active');
+        $('.menu-home').addClass('active');
+        $('.active > a').css('color','#006D39');
     }
 
     if (winbottom > $('.our-work').offset().top){
