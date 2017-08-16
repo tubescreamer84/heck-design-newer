@@ -37,6 +37,10 @@ a:focus{
 a{
     color:#606c76;
 }
+
+.transparent{
+    background:transparent !important;
+}
 /*********************************************************************************
 FONTS
 *********************************************************************************/
@@ -845,9 +849,9 @@ section.overlay.our-work {
 }
 
   .owl-carousel .phone img{
-    transform: rotate(12deg);
-    width: 25%;
-    margin-top: 10rem;
+    transform: rotate(-5deg);
+    width: 40%;
+    margin-top: 20rem;
   }
 
 
