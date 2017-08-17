@@ -428,6 +428,9 @@ JUMBOTRON
      /*background: transparent; */
     background:#1DA664;
     background-image: linear-gradient(180deg,#1DA664,#098A4C);
+    background-image: linear-gradient(180deg,#0F537F,#063F64);
+    background-image: linear-gradient(180deg,#6299BD,#063F64);
+  
     color:#fff;
     height:100%;
     position: relative;
@@ -698,6 +701,7 @@ section.about.overlay
 
 .spaceneedle{
     max-width: 10rem;
+    opacity: .35;
 }
 /*********************************************************************************
 OUR WORK
@@ -714,6 +718,17 @@ section.overlay.our-work {
     height: 100vh !important;
 
 }*/
+
+.our-work .trees{
+    position: absolute;
+    width: 35rem;
+    right: 18rem;
+    z-index: 1;
+    opacity: 0.2;
+    top: 50%;
+    /* left: 25%; */
+    transform: translate(0, -50%);
+}
 .our-work .angle2{
     background: #ffa93e;
     position: absolute;
@@ -850,8 +865,8 @@ section.overlay.our-work {
 
   .owl-carousel .phone img{
     transform: rotate(-5deg);
-    width: 40%;
-    margin-top: 20rem;
+    width: 35%;
+    margin-top: 10rem;
   }
 
 
@@ -879,6 +894,9 @@ OWL
    
 }
 
+  .owl-theme .work.row-center{
+        margin-top:8rem;
+    }
 .owl-theme .work{
     width:95%;
     margin:0 auto;
@@ -913,7 +931,7 @@ OWL
     text-align: center;
     -webkit-tap-highlight-color: transparent;
     position: absolute;
-    bottom: 10rem;
+    bottom: 5rem;
     left: 0;
     width: 100%;
     z-index: -1;
@@ -1205,7 +1223,6 @@ input[type='email']:focus, input[type='number']:focus, input[type='password']:fo
     .work p{
         line-height: 2.5rem;
     }
-
     .our-work .column{
         position:initial;
     }
