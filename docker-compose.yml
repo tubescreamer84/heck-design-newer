@@ -1,0 +1,9 @@
+version: '2'
+services:
+  caddy:
+    image: abiosoft/caddy
+    volumes:
+      - .:/web
+      - ./Caddyfile:/etc/Caddyfile
+    ports:
+      - "2015:2015"

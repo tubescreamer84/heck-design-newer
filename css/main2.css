@@ -644,7 +644,7 @@ section.about {
     background-image: url(../img/spaceneedle-purple.jpg);
     background-size: cover;
     background-repeat: no-repeat;
-    background-position: 50%;
+    background-position: 85% 50%;
     /*overflow: hidden;*/
 }
 

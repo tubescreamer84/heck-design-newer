@@ -11,7 +11,7 @@ function getAbsolutePath() {
 }
 
 $(document).ready(function(){
-
+console.log($(".about").height());
     
 
     console.log( getAbsolutePath());
@@ -54,7 +54,7 @@ $(document).ready(function(){
     }
     $('.scroll-down').click(function(){
         $('html, body').animate({
-            scrollTop: $("#about").offset().top - $('header').outerHeight()
+            scrollTop: 799
         }, 1000);
       
     });
@@ -92,7 +92,7 @@ $(document).ready(function(){
             scrollTop: $('.'+data).offset().top
         }, 750);
         //     $('.overlay').removeClass('show');
-        history.pushState({}, '', data);
+        history.pushState({}, '', '#'+data);
         $('.active > a').css('color','');
         $('.menu li').removeClass('active');
         $(this).addClass('active');
@@ -277,20 +277,45 @@ function MouseWheelEvent(e){
 
 $(window).load(function(){
 
- route(function(path) {
+  route(function(path) {
         console.log('path me')
         console.log('path=%s', path)
       })
 
-      route('/about', function() {
+      route('/', function() {
          console.log('about 2'); 
-            scrollMe2();
+        $('html, body').animate({
+            // scrollTop: 799
+            scrollTop: 0
+        }, 1000);
       }); // routing-B (2)
 
-    // riot.compile(function() {
-    //   riot.mount('app')
+      route('/about', function() {
+         console.log('about 2'); 
+        $('html, body').animate({
+            // scrollTop: 799
+            scrollTop: $('.about').offset().top
+        }, 1000);
+      }); // routing-B (2)
+
+     route('/our-work', function() {
+         console.log('Our Work'); 
+        $('html, body').animate({
+            scrollTop: $('.our-work').offset().top
+        }, 1000);
+      }); // routing-B (2)
+        
+      route('/contact', function() {
+         console.log('contact'); 
+        $('html, body').animate({
+            scrollTop: $('.contact').offset().top
+        }, 1000);
+      }); // routing-B (2)
+
+
       route.start(true)
       route.base('#') // without hash
+
 
 
 });
@@ -309,6 +334,7 @@ $(window).scroll(function(e){
         $('.menu li').removeClass('active');
         $('.menu-about').addClass('active');
         $('.active > a').css('color','#670124');
+        history.pushState({}, '', '#about');
         
            
     }
@@ -319,6 +345,7 @@ $(window).scroll(function(e){
          $('.menu-work').addClass('active');
          $('.active > a').css('color','initial');
          $('.active > a').css('color','#9a5602');
+         history.pushState({}, '', '#our-work');
        
        
     } else if(wintop >= $('.contact').offset().top - header){
@@ -327,6 +354,7 @@ $(window).scroll(function(e){
          $('.menu li').removeClass('active');
          $('.menu-contact').addClass('active');
          $('.active > a').css('color','#8a2300');
+         history.pushState({}, '', '#contact');
        
        
     }else{
@@ -335,6 +363,7 @@ $(window).scroll(function(e){
         $('.menu li').removeClass('active');
         $('.menu-home').addClass('active');
         $('.active > a').css('color','#006D39');
+        history.pushState({}, '', '/');
     }
 
     if (winbottom > $('.our-work').offset().top){
