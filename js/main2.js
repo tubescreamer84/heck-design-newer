@@ -163,9 +163,8 @@ console.log($(".about").height());
         $(this).blur();
     });
 
-    $('.mobile-button').click(function(){
-        $('header').toggleClass('show');
-
+    $('.mobile-button, .menu a').click(function(){
+        $('body').toggleClass('show');
     });
 
     $('.over').addClass('fade');
@@ -329,40 +328,40 @@ $(window).scroll(function(e){
     
     // console.log('minus header: ' + ($('.our-work').offset().top - header));
     if (wintop >= $('.about').offset().top - header && wintop < $('.our-work').offset().top - header){
-        $('header').css('background-color','#a23f61');
+        // $('header').css('background-color','#a23f61');
         $('.active > a').css('color','');
         $('.menu li').removeClass('active');
         $('.menu-about').addClass('active');
-        $('.active > a').css('color','#670124');
+        // $('.active > a').css('color','#670124');
         history.pushState({}, '', '#about');
         
            
     }
     else if(wintop >= $('.our-work').offset().top - header && wintop < $('.contact').offset().top - header){
-         $('header').css('background-color','#e4912a');
+        //  $('header').css('background-color','#e4912a');
          $('.active > a').css('color','');
          $('.menu li').removeClass('active');
          $('.menu-work').addClass('active');
          $('.active > a').css('color','initial');
-         $('.active > a').css('color','#9a5602');
+        //  $('.active > a').css('color','#9a5602');
          history.pushState({}, '', '#our-work');
        
        
     } else if(wintop >= $('.contact').offset().top - header){
-         $('header').css('background-color','#C63C0D');
+        //  $('header').css('background-color','#C63C0D');
          $('.active > a').css('color','');
          $('.menu li').removeClass('active');
          $('.menu-contact').addClass('active');
-         $('.active > a').css('color','#8a2300');
+        //  $('.active > a').css('color','#8a2300');
          history.pushState({}, '', '#contact');
        
        
     }else{
-        $('header').css('background-color','#1DA664');
+        // $('header').css('background-color','#1DA664');
         $('.active > a').css('color','');
         $('.menu li').removeClass('active');
         $('.menu-home').addClass('active');
-        $('.active > a').css('color','#006D39');
+        // $('.active > a').css('color','#006D39');
         history.pushState({}, '', '/');
     }
 
@@ -517,9 +516,6 @@ function headingColor(){
 function scrollMe2(){
     console.log('scroll me');
     console.log($('#our-work').offset().top );
-    $('html,body').animate({
-        scrollTop: $('#our-work').offset().top
-    },1000);
 }     
 
  

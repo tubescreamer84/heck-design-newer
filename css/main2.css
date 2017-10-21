@@ -243,6 +243,100 @@ section.overlay{
    font-size: 10rem;
 }*/
 
+
+
+/*********************************************************************************
+Mobile Menu
+*********************************************************************************/
+
+  
+    .mobile-button{
+        /*display: block;*/
+        width: 5rem;
+        position: absolute;
+        right: 5rem;
+        /* float: right; */
+        cursor: pointer;
+        z-index: 101;
+        margin-top: 2.25rem;
+    }
+
+    .line-wrap{
+      min-height: 2rem;
+    }
+
+    .line{
+    transition: all .25s ease-in-out;
+    -moz-transition: all.25s ease-in-out;
+    -webkit-transition: all .25s ease-in-out;
+    }
+
+    .line.two{
+    transition: all .05s ease-in-out;
+    -moz-transition: all.05s ease-in-out;
+    -webkit-transition: all .05s ease-in-out;
+    }
+
+    .show .line.one{
+        transform: rotate(45deg);
+        position: absolute;
+
+    }
+
+    .show .line.two{
+       opacity: 0;
+       position: absolute;
+    }
+
+    .show .line.three{
+        transform: rotate(-45deg);
+    }
+
+    .show .mobile-button{
+            margin-top: 3.5rem;
+    }
+
+    .menu{
+       /*transform: translate3d(0,-100%,0);
+    position: fixed;
+    background: #fff;
+    width: 100%;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    height: 100%;
+    text-align: center;*/
+    }
+
+    .show .menu{
+    transform: translate3d(0,0,0);
+    transition: all .25s ease-in-out !important;
+    -moz-transition: all .25s ease-in-out;
+    -webkit-transition: all .25s ease-in-out;
+    }  
+
+   .menu ul{
+       /* display: inline-block; */
+    text-align: center;
+    margin-top: 0;
+    }
+    .menu ul li{
+          margin-right: 1.25rem;
+        
+    }
+    .menu ul li a{
+        color: #e2e2e2;
+        font-size: 5rem;
+        text-transform: uppercase;
+        transition: all .25s ease-in-out;
+        -moz-transition: all .25s ease-in-out;
+        -webkit-transition: all .25s ease-in-out;
+    }
+
+    .menu a:hover{
+        color:#1fa665;
+    }
 /*********************************************************************************
 Header
 *********************************************************************************/
@@ -304,13 +398,13 @@ header {
 }*/
 
 .mobile-button{
-    display: none;
+    /* display: none; */
 }
 
 /*********************************************************************************
 MENU
 *********************************************************************************/
-.menu{ 
+/* .menu{ 
     position: absolute;
     top: 0;
     z-index: 4;
@@ -319,22 +413,48 @@ MENU
     display: flex;
     flex-direction: column;
     height: 8rem;
-    /* height: 100%; */
     align-items: center;
     transition: all .65s ease-in-out !important;
     -moz-transition: all .65s ease-in-out;
     -webkit-transition: all .65s ease-in-out;
-}
+    display: none;
+} */
 
+.menu {
+    position: fixed;
+    background: #000;
+    top: 0;
+    bottom: 0;
+    height: 100%;
+    width: 100%;
+    z-index: 4;
+    left: 0;
+    /* right: 0; */
+    /* display: flex; */
+    /* flex-direction: column; */
+    /* height: 8rem; */
+    /* height: 100%; */
+    /* align-items: center; */
+    transition: all .65s ease-in-out !important;
+    -moz-transition: all .65s ease-in-out;
+    -webkit-transition: all .65s ease-in-out;
+       transform: translate3d(0,-100%,0);
+    /* display: none; */
+}
 .menu ul{
-    list-style-type: none;
+ list-style-type: none;
     text-align: center;
     margin-top: 2rem;
+    position: absolute;
+    top: 50%;
+    /* margin: 0 auto; */
+    width: 100%;
+    transform: translatey(-50%);
 }
 
 .menu ul li{
     display: inline-block;
-    text-align: left;
+    /* text-align: left; */
     margin-right: 2em;
     transition: all .25s ease-in-out !important;
     -moz-transition: all .25s ease-in-out;
@@ -369,19 +489,19 @@ MENU
 .line{
         height: .5rem;
     width: 100%;
-    background: #fff;
+    background: #1fa665;
 }
 
 .scrolling .line,.show .line{
-    background:#000;
+    /* background:#000; */
 }
 
 .line.one,.line.two{
     margin-bottom:1rem;
 }
-.active > a {
+.menu .active > a {
     /*color: #ee5c29 !important;*/
-    color: #006D39;
+    color: #1fa665;
 }
 
 /*********************************************************************************
@@ -408,7 +528,7 @@ Overlays
     transform: translate3d(200%,0,0);
 
 }*/
-.show {  
+.show .menu{  
     transform: translate3d(0,0,0);
     /*z-index: 4;*/
 }
@@ -437,6 +557,12 @@ JUMBOTRON
     /*display: flex;*/
 }
 
+.jumbotron h2,.jumbotron p{
+    color: #1DA664;
+}
+
+
+
 .jumbo-inner{
     height: auto;
     position: absolute;
@@ -444,9 +570,10 @@ JUMBOTRON
     bottom: 0;
     width: 100%;
     background: #1DA664;
+    background: #fff;
 }
 .mountain{
-    width: 65%;
+    width: 75%;
     height: auto;
     position: absolute;
     left:0;
@@ -506,7 +633,7 @@ JUMBOTRON
 
 
 header ul li a {
-    color: #fff;
+    color: #888;
     font-size: 1.25em;
     text-transform: uppercase;
     text-decoration: none;
@@ -733,7 +860,7 @@ section.overlay.our-work {
     background: #ffa93e;
     position: absolute;
     z-index: 0;
-    width: 52%;
+    width: 60%;
     right: -10%;
     top: -30%;
     height: 150%;
@@ -1077,81 +1204,6 @@ input[type='email']:focus, input[type='number']:focus, input[type='password']:fo
 
   
 
-  
-    .mobile-button{
-        /*display: block;*/
-        width: 5rem;
-        position: absolute;
-        right: 2rem;
-        /* float: right; */
-        cursor: pointer;
-        z-index: 101;
-        margin-top: 2.25rem;
-    }
-
-    .line{
-    transition: all .25s ease-in-out;
-    -moz-transition: all.25s ease-in-out;
-    -webkit-transition: all .25s ease-in-out;
-    }
-
-    .line.two{
-          transition: all .05s ease-in-out;
-    -moz-transition: all.05s ease-in-out;
-    -webkit-transition: all .05s ease-in-out;
-    }
-
-    .show .line.one{
-        transform: rotate(45deg);
-        position: absolute;
-
-    }
-
-    .show .line.two{
-       opacity: 0;
-       position: absolute;
-    }
-
-    .show .line.three{
-        transform: rotate(-45deg);
-    }
-
-    .show .mobile-button{
-            margin-top: 3.5rem;
-    }
-
-    .menu{
-       /*transform: translate3d(0,-100%,0);
-    position: fixed;
-    background: #fff;
-    width: 100%;
-    left: 0;
-    top: 0;
-    bottom: 0;
-    right: 0;
-    height: 100%;
-    text-align: center;*/
-    }
-
-    .show .menu{
-    transform: translate3d(0,0,0);
-    transition: all .25s ease-in-out !important;
-    -moz-transition: all .25s ease-in-out;
-    -webkit-transition: all .25s ease-in-out;
-    }  
-
-   .menu ul{
-       display: inline-block;
-    text-align: center;
-    margin-top: 0;
-    }
-    .menu ul li{
-          margin-right: 1.25rem;
-        
-    }
-    .menu ul li a{
-        /*color: #606c76;*/
-    }
 
     h1{
         font-size: 3rem;
